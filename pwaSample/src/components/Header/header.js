@@ -2,7 +2,7 @@ import React, { Fragment, Suspense } from 'react';
 import { shape, string } from 'prop-types';
 import { Link, Route } from 'react-router-dom';
 
-import Logo from '../Logo';
+import Logo from '@magento/venia-ui/lib/components/Logo';
 import AccountTrigger from './accountTrigger';
 import CartTrigger from './cartTrigger';
 import NavTrigger from './navTrigger';
@@ -15,11 +15,13 @@ import { useStyle } from '@magento/venia-ui/lib/classify';
 import defaultClasses from './header.module.css';
 import StoreSwitcher from './storeSwitcher';
 import CurrencySwitcher from './currencySwitcher';
-import MegaMenu from '../MegaMenu';
-import PageLoadingIndicator from '../PageLoadingIndicator';
+import MegaMenu from '@magento/venia-ui/lib/components/MegaMenu';
+import PageLoadingIndicator from '@magento/venia-ui/lib/components/PageLoadingIndicator';
 import { useIntl } from 'react-intl';
 
-const SearchBar = React.lazy(() => import('../SearchBar'));
+const SearchBar = React.lazy(() =>
+    import('@magento/venia-ui/lib/components/SearchBar')
+);
 
 const Header = props => {
     const {
@@ -63,7 +65,7 @@ const Header = props => {
                     <CurrencySwitcher />
                 </div>
             </div>
-            <header className={rootClass} data-cy="Header-root">
+            <header className={rootClass}  data-cy="Header-root">
                 <div className={classes.toolbar}>
                     <div className={classes.primaryActions}>
                         <NavTrigger />

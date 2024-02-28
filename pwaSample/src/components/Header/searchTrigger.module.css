@@ -1,5 +1,5 @@
 .root {
-    composes: root from '../clickable.module.css';
+    composes: root from '@magento/venia-ui/lib/components/clickable.module.css';
 
     composes: h-lg from global;
     composes: w-lg from global;

@@ -4,7 +4,7 @@ import { shape, string } from 'prop-types';
 import { useStoreSwitcher } from '@magento/peregrine/lib/talons/Header/useStoreSwitcher';
 import { availableRoutes } from '@magento/venia-ui/lib/components/Routes/routes';
 
-import { useStyle } from '../../classify';
+import { useStyle } from '@magento/venia-ui/lib/classify';
 import defaultClasses from './storeSwitcher.module.css';
 import SwitcherItem from './switcherItem';
 import Shimmer from './storeSwitcher.shimmer';

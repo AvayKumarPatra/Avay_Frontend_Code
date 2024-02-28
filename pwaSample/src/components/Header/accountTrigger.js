@@ -5,7 +5,7 @@ import { shape, string } from 'prop-types';
 import { useAccountTrigger } from '@magento/peregrine/lib/talons/Header/useAccountTrigger';
 import { useStyle } from '@magento/venia-ui/lib/classify';
 
-import AccountChip from '../AccountChip';
+import AccountChip from '@magento/venia-ui/lib/components/AccountChip';
 
 import defaultClasses from './accountTrigger.module.css';
 
@@ -51,7 +51,7 @@ const AccountTrigger = props => {
                     className={classes.trigger}
                     onClick={handleTriggerClick}
                     data-cy="AccountTrigger-trigger"
-                >   
+                >
                     <AccountChip
                         fallbackText={formatMessage({
                             id: 'accountTrigger.buttonFallback',

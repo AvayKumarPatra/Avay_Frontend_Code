@@ -3,8 +3,8 @@ import { shape, string } from 'prop-types';
 
 import { useCurrencySwitcher } from '@magento/peregrine/lib/talons/Header/useCurrencySwitcher';
 
-import { useStyle } from '../../classify';
-import CurrencySymbol from '../CurrencySymbol';
+import { useStyle } from '@magento/venia-ui/lib/classify';
+import CurrencySymbol from '@magento/venia-ui/lib/components/CurrencySymbol';
 import defaultClasses from './currencySwitcher.module.css';
 import SwitcherItem from './switcherItem';
 import Shimmer from './currencySwitcher.shimmer';

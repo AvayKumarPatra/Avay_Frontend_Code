@@ -3,8 +3,8 @@ import { node, shape, string } from 'prop-types';
 import { Menu as MenuIcon } from 'react-feather';
 import { useIntl } from 'react-intl';
 
-import Icon from '../Icon';
-import { useStyle } from '../../classify';
+import Icon from '@magento/venia-ui/lib/components/Icon';
+import { useStyle } from '@magento/venia-ui/lib/classify';
 import defaultClasses from './navTrigger.module.css';
 import { useNavigationTrigger } from '@magento/peregrine/lib/talons/Header/useNavigationTrigger';
 

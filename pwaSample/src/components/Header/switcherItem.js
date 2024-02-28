@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import { Check } from 'react-feather';
 import { bool, func, shape, string } from 'prop-types';
 
-import { useStyle } from '../../classify';
-import Icon from '../Icon/icon';
+import { useStyle } from '@magento/venia-ui/lib/classify';
+import Icon from '@magento/venia-ui/lib/components/Icon/icon';
 import defaultClasses from './switcherItem.module.css';
 
 const SwitcherItem = props => {
