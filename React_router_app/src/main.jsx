@@ -6,6 +6,8 @@ import Route from "./Route.jsx";
 import Home from "../src/components/Home/Home.jsx";
 import About from "../src/components/About/About.jsx";
 import Contact from "./components/Contacts/Contacts.jsx";
+import MyParams from "./components/myParams/MyParams.jsx";
+import GitHub from "./components/GitHub/GitHub.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <Contact />,
+      },
+      {
+        path: "user/:UserId",
+        element: <MyParams />,
+      },
+      {
+        path: "/github",
+        element: <GitHub />,
       },
     ],
   },
