@@ -14,7 +14,7 @@ const LogIn = () => {
   };
   return (
     <>
-      <h1>LogIn</h1>
+      <h1 classNameName="text-indigo-700">LogIn</h1>
       <input
         type="text"
         value={username}
@@ -27,7 +27,9 @@ const LogIn = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="password"
       />
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit} classNameName="text-indigo-700">
+        Submit
+      </button>
     </>
   );
 };
