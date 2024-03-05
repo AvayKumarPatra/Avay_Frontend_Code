@@ -8,6 +8,7 @@ const LogIn = () => {
   const { setUser } = useContext(UserContext);
 
   const handleSubmit = (e) => {
+    console.log("clicked");
     e.preventDefault();
     setUser({ username, password });
   };
@@ -26,7 +27,7 @@ const LogIn = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="password"
       />
-      <button onSubmit={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit}>Submit</button>
     </>
   );
 };
