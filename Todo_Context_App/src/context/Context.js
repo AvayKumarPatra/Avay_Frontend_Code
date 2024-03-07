@@ -1,7 +1,9 @@
-import React from 'react'
+import { createContext , useContext } from "react";
 
-export const Context = () => {
-  return (
-    <div>Context</div>
-  )
+export const TodoContext=createContext({
+
+})
+
+export const useTodo=()=>{
+    return useContext(TodoContext)
 }
