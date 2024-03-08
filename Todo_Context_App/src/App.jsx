@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TodoProvider } from "./context";
+import { TodoForm, TodoItem } from "./components";
 
 const App = () => {
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodo] = useState([]);
 
   const addTodo = (todo) => {
     setTodo((prev) => [
@@ -14,6 +15,7 @@ const App = () => {
     ]);
   };
   const updateTodo = (id, todo) => {
+    console.log("todo are in updateTodo", todo);
     setTodo((prev) =>
       prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo))
     );
@@ -23,9 +25,36 @@ const App = () => {
   };
   const toggleComplete = (id) => {
     setTodo((prev) =>
-      prev.map((prevTodo) => (prevTodo === id ? {...prevTodo,completed:!prevTodo.completed} : prevTodo))
+      prev.map((prevTodo) =>
+        prevTodo.id === id
+          ? { ...prevTodo, completed: !prevTodo.completed }
+          : prevTodo
+      )
     );
   };
+
+  // useEffect(() => {
+  //   const todos = JSON.parse(localStorage.getItem("todos"));
+
+  //   if (todos && todos.length > 0) {
+  //     setTodo(todos);
+  //   }
+  // }, []);
+  useEffect(() => {
+    try {
+      const storedTodos = JSON.parse(localStorage.getItem("todos"));
+
+      if (Array.isArray(storedTodos)) {
+        setTodo(storedTodos);
+      }
+    } catch (error) {
+      console.error("Error parsing todos from localStorage:", error);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
   return (
     <TodoProvider
       value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}
@@ -35,9 +64,17 @@ const App = () => {
           <h1 className="text-2xl font-bold text-center mb-8 mt-2">
             Manage Your Todos
           </h1>
-          <div className="mb-4">{/* Todo form goes here */}</div>
+          <div className="mb-4">
+            {/* Todo form goes here */}
+            <TodoForm />
+          </div>
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
+            {todos.map((todo) => (
+              <div key={todo.id} className="w-full">
+                <TodoItem todo={todo} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
