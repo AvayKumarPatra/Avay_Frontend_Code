@@ -15,7 +15,7 @@ const HeaderScrollBar = () => {
     <>
       <div className="App">
         <div className="max-w-lg">
-          <Carousel>
+          <Carousel autoSlide={true}>
             {images.map((image) => (
               // eslint-disable-next-line react/jsx-key
               <img src={image} />

@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "react-feather";
 
-const Carousel = ({ children: images }) => {
+const Carousel = ({
+  children: images,
+  autoSlide = false,
+  autoSlideInterval = 3000,
+}) => {
   const [cur, setCur] = useState(0);
   // eslint-disable-next-line react/prop-types
   const prev = () => setCur((cur) => (cur === 0 ? images.length - 1 : cur - 1));
 
   const next = () => setCur((cur) => (cur === images.length - 1 ? 0 : cur + 1));
+
+  useEffect(() => {
+    if (!autoSlide) return;
+    const slideInterval = setInterval(next, autoSlideInterval);
+    return () => clearInterval(slideInterval);
+  }, []);
   return (
     <>
       <div className="overflow-hidden relative">
@@ -30,13 +40,13 @@ const Carousel = ({ children: images }) => {
             <ChevronRight size={40} />
           </button>
         </div>
-        <div className="absolute buttom-4 right-0 left-0">
+        <div className="absolute bottom-4 right-0 left-0">
           <div className="flex items-center justify-center gap-2">
             {images.map((_, i) => (
               <div
-                key={i} // Adding a unique key prop is essential when using map in React
-                className={`transition-all w-3 h-3 bg-red-300 rounded-full ${
-                  cur === i ? "p-2" : "bg-opacity-50"
+                key={i}
+                className={`transition-all w-3 h-3 bg-zinc-300 rounded-full ${
+                  cur === i ? "p-1" : "bg-opacity-50"
                 }`}
               />
             ))}
