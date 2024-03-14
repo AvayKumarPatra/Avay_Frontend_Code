@@ -1,11 +1,13 @@
+import Ant_demo from "./components/Ant_demo";
 import HeaderScrollBar from "./components/HeaderScrollBar";
 import UserFeedback from "./components/UserFeedback";
 
 const App = () => {
   return (
     <>
-      <HeaderScrollBar />
+      {/* <HeaderScrollBar /> */}
       {/* <UserFeedback /> */}
+      <Ant_demo />
     </>
   );
 };
