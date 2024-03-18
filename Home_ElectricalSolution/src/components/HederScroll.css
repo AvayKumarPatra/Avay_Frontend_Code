@@ -7,7 +7,7 @@
   transition: transform 0.5s ease; /* Added transition property */
 }
 .direction {
-  @apply rtl: mr -1px;
+  @apply bg-slate-500;  
   height: 50rem;
   width: 50rem;
   border: 1px solid black;
