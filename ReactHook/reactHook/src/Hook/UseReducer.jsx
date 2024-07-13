@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from "react";
 import UseStateHook from "./UseStateHook";
 import { reducer } from "../Store/Reducers/reducerHook";
+import { UseRefHook } from "./UseRefHook";
 
 export const UseReducer = () => {
 //   const [component, setComponent] = useState([<UseStateHook></UseStateHook>]);
@@ -19,6 +20,7 @@ export const UseReducer = () => {
   };
   return (
     <>
+    <UseRefHook />
       <div>UseReducer</div>
       <button onClick={()=>dispatch({type:'Add'})}>Add Component</button>
       <button onClick={()=>dispatch({type:'Remove'})}>Remove Component</button>
