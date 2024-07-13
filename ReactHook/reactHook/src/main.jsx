@@ -5,9 +5,8 @@ import "./index.css";
 import { AppProvider } from "./Hook/ContextHook.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
-  <AppProvider>
+  <React.StrictMode>
     <App />
-  </AppProvider>
-  // </React.StrictMode>,
+ 
+  </React.StrictMode>,
 );
