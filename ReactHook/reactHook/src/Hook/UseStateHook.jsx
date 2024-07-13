@@ -7,20 +7,19 @@ const UseStateHook = (user) => {
     password: "",
   });
 
-  const {name , age}=user
+  const { name, age } = user;
 
   const handleInput = (e) => {
     const name = e.target.name;
     console.log(name);
     const value = e.target.value;
-    setFormData((prev)=>{
-      return {...prev,[name]:value}
-    })
+    setFormData((prev) => {
+      return { ...prev, [name]: value };
+    });
   };
 
   return (
     <>
-    <div>Name is {name} and age is {age}</div>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img

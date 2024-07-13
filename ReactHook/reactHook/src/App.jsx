@@ -3,6 +3,7 @@ import "./App.css";
 import UseStateHook from "./Hook/UseStateHook";
 import UseEffectHook from "./Hook/UseEffectHook";
 import UseContextHook from "./Hook/UseContextHook";
+import { UseReducer } from "./Hook/UseReducer";
 
 function App() {
   const userDetails={
@@ -14,7 +15,8 @@ function App() {
     <>
       {/* <UseStateHook /> */}
       {/* <UseEffectHook /> */}
-      <UseContextHook />
+      {/* <UseContextHook /> */}
+      <UseReducer />
     </>
   );
 }
