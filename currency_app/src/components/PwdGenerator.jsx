@@ -8,6 +8,7 @@ export const PwdGenerator = () => {
   const [password, setPassword] = useState("");
 
   //ref hook
+  //write test cases for that and file name is PwdGenerator?
   const passwordRef = useRef(null);
 
   const passwordGenerator = useCallback(() => {
