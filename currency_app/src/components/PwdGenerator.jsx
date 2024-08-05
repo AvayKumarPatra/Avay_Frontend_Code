@@ -35,7 +35,7 @@ export const PwdGenerator = () => {
   return (
     <>
       <div className="pwdTable shadow-md rounded-lg text-orange-500 bg-gray-700">
-        <h1 className="text-white text-center">Password Gnerator</h1>
+        <h1 className="text-white text-center">Password Gnerator Checking by avayyy debasish</h1>
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
           <input
             type="text"
